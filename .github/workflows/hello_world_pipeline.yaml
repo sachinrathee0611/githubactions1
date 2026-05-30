@@ -1,0 +1,25 @@
+# This is telling the name of the GitHub Actions Workflow
+name: "My First Pipeline: Hello World Pipeline"
+
+# Creating a trigger for Push on main branch
+on: 
+  push:
+    branches: 
+      - main
+
+# Creating job(s)
+jobs:
+
+# Creating the first job name print_hello_world_job
+  print_hello_world_job:
+
+# Choosing a GitHub runner of Ubuntu image.
+    runs-on: ubuntu-latest
+
+# Now, creating steps inside our Job
+    steps:
+      - name: "This step will print hello world from inside the runner in a pipeline."
+        run: echo "Hello World. I am stuck inside the pipeline. Hope you can atleast see me."
+
+      - name: "This step will print the date."
+        run: date
